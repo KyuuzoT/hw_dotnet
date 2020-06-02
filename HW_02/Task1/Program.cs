@@ -15,7 +15,6 @@ namespace Task1
             Console.WriteLine($"double1 = {d1};\nfloat1 = {f1};\nint1 = {i1};\nint2 = {i2};\n" +
                 $"const int = {iConst};\n\n");
 
-
             long l1;
             long l2;
             int i3;
