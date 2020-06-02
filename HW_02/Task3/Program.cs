@@ -7,7 +7,6 @@ namespace Task3
     {
         static void Main(string[] args)
         {
-
             /***
              * Algorithm
              * 1. Open text file as stream
@@ -18,7 +17,6 @@ namespace Task3
              * 7. Write it to new image file.
              * 
              **/
-
             byte binary;
             using (StreamReader sr = new StreamReader(
                 @"D:\Development\Prog\HW_02\HW_02\Task3\Assets\image.txt", true))
