@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1145
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw_dotnet", "hw_dotnet\hw_dotnet.csproj", "{7256FF07-73DA-4A62-84DB-5FD052678D4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "HW_01\Task1\Task1.csproj", "{E5F42BF4-84D2-47D5-86F6-10482C25B9D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HW_01", "HW_01", "{22E9C411-6A6A-4D49-AEDE-6E3BDD9223FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{7256FF07-73DA-4A62-84DB-5FD052678D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7256FF07-73DA-4A62-84DB-5FD052678D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7256FF07-73DA-4A62-84DB-5FD052678D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F42BF4-84D2-47D5-86F6-10482C25B9D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F42BF4-84D2-47D5-86F6-10482C25B9D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F42BF4-84D2-47D5-86F6-10482C25B9D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F42BF4-84D2-47D5-86F6-10482C25B9D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5F42BF4-84D2-47D5-86F6-10482C25B9D6} = {22E9C411-6A6A-4D49-AEDE-6E3BDD9223FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {56C58A5C-6B01-432F-BBE1-57D557AEC413}
