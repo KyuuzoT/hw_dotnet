@@ -14,10 +14,20 @@ namespace Task1
             double secondValue;
             Console.WriteLine("Input parameters for calculating:\n");
             Console.WriteLine("First parameter: ");            
-            var readFirst = Console.ReadLine();
+            string readFirst = Console.ReadLine();
+
+            if(Double.TryParse(readFirst, out firstValue))
+            {
+                Console.WriteLine("\nFirst value adding - success!\n")
+            }
 
             Console.WriteLine("Second parameter: ");
-            var readSecond = Console.ReadLine();
+            string readSecond = Console.ReadLine();
+
+            if (Double.TryParse(readSecond, out secondValue))
+            {
+                Console.WriteLine("\nSecond value adding - success!\n");
+            }
         }
     }
 }
