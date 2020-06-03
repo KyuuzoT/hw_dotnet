@@ -12,22 +12,38 @@ namespace Task1
         {
             double firstValue;
             double secondValue;
-            Console.WriteLine("Input parameters for calculating:\n");
-            Console.WriteLine("First parameter: ");            
-            string readFirst = Console.ReadLine();
-
-            if(Double.TryParse(readFirst, out firstValue))
+            while (true)
             {
-                Console.WriteLine("\nFirst value adding - success!\n")
+                Console.WriteLine("Input parameters for calculating:\n");
+                InputTwoParametrs(out firstValue, out secondValue);
             }
+
+        }
+
+        private static void InputTwoParametrs(out double firstValue, out double secondValue)
+        {
+            Console.WriteLine("First parameter: ");
+            firstValue = InputValue();
 
             Console.WriteLine("Second parameter: ");
-            string readSecond = Console.ReadLine();
+            secondValue = InputValue();
+        }
 
-            if (Double.TryParse(readSecond, out secondValue))
+        private static double InputValue()
+        {
+            string readVal = Console.ReadLine();
+            double dValue;
+
+            if (Double.TryParse(readVal, out dValue))
             {
-                Console.WriteLine("\nSecond value adding - success!\n");
+                Console.WriteLine("\nValue adding - success!\n");
             }
+            else
+            {
+                Console.WriteLine("Error! " + readVal + " is not a number!");
+            }
+
+            return dValue;
         }
     }
 }
