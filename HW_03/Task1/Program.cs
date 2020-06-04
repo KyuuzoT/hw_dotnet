@@ -8,14 +8,24 @@ namespace Task1
 {
     class Program
     {
+        private static bool isNumber;
         static void Main(string[] args)
         {
             double firstValue;
             double secondValue;
+            bool result;
             while (true)
             {
                 Console.WriteLine("Input parameters for calculating:\n");
                 InputTwoParametrs(out firstValue, out secondValue);
+                if(isNumber)
+                {
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
             }
 
         }
@@ -34,7 +44,7 @@ namespace Task1
             string readVal = Console.ReadLine();
             double dValue;
 
-            if (Double.TryParse(readVal, out dValue))
+            if (isNumber = Double.TryParse(readVal, out dValue))
             {
                 Console.WriteLine("\nValue adding - success!\n");
             }
