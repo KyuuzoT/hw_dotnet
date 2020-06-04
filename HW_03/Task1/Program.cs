@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task1
 {
@@ -13,7 +9,6 @@ namespace Task1
         {
             double firstValue;
             double secondValue;
-            bool result;
             while (true)
             {
                 Console.WriteLine("Input parameters for calculating:\n");
