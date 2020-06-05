@@ -21,7 +21,6 @@ namespace Task1
 
         private static void Menu(ref double firstValue, ref double secondValue, ref double radius)
         {
-            isMenuItemExists = true;
             Console.WriteLine("This program could perform several actions:");
             Console.WriteLine("\t1. Calculate sum of two numbers;");
             Console.WriteLine("\t2. Calculate difference of two numbers;");
