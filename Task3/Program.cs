@@ -11,26 +11,34 @@ namespace Task3
         static bool bHappyBirthday;
         static void Main(string[] args)
         {
+            Console.WriteLine("Please input your name:");
+            string sName = Console.ReadLine();
+            int age;
+            age = InputBirthdayDTFormatt(sName);
+            Console.Read();
+        }
+
+        private static int InputBirthdayDTFormatt(string sName)
+        {
             int age;
             DateTime currentDT = DateTime.Now;
-            Console.WriteLine("Please input your name:");
-            string sName = Console.ReadLine();            
             DateTime birthdayDT;
             do
             {
-                Console.WriteLine("Please input your date of birth in format: {0:d}", new DateTime(1970,1,1));
+                Console.WriteLine("Please input your date of birth in format: {0:d}", new DateTime(1970, 1, 1));
             } while (!DateTime.TryParse(Console.ReadLine(), out birthdayDT));
 
             Console.WriteLine(currentDT);
             age = GetAge(birthdayDT, currentDT);
-            Console.WriteLine($"Hello, {sName}! Your age is {age}!");
-            if(bHappyBirthday)
+            Console.WriteLine($"Hello again, {sName}! Your age is {age}!");
+            if (bHappyBirthday)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine($"So, {sName}, today is your birthday! We wish you best luck!");
                 Console.ResetColor();
             }
-            Console.Read();
+
+            return age;
         }
 
         private static int GetAge(DateTime birthdayDT, DateTime currentDT)
