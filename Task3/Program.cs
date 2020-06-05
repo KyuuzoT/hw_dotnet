@@ -39,6 +39,7 @@ namespace Task3
         {
             int year;
             int month;
+            int age;
             do
             {
                 Console.WriteLine("\nInput month: ");
@@ -66,6 +67,14 @@ namespace Task3
                 }
                 Console.WriteLine("\nIncorrect year. Try again.\n");
             } while (true);
+
+            age = DateTime.Now.Year - year;
+            if(DateTime.Now.Month < month)
+            {
+                age--;
+            }
+
+            Console.WriteLine($"Hello again, {sName}! Your age is {age}!");
         }
 
         private static void InputBirthdayDTFormatt(string sName)
