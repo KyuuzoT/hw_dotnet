@@ -4,25 +4,15 @@ namespace Task1
 {
     class Program
     {
-        private static bool isNumber;
-        private static bool isMenuItemExists;
+        private static bool bRepeateFlag = true;
         static void Main(string[] args)
         {
             double firstValue = 0;
             double secondValue = 0;
             double radius = 0;
-            while (true)
+            while (bRepeateFlag)
             {
                 Menu(ref firstValue, ref secondValue, ref radius);
-
-                if (isNumber && isMenuItemExists)
-                {
-                    continue;
-                }
-                else
-                {
-                    continue;
-                }
             }
 
             Console.ReadKey();
@@ -64,8 +54,18 @@ namespace Task1
                     break;
                 default:
                     Console.WriteLine("Input unressolved. Please try again!\n\n");
-                    isMenuItemExists = false;
-                    break;
+                    bRepeateFlag = true;
+                    return;
+            }
+
+            Console.WriteLine("Calculations done! Want to calculate smth again? (Y,N)");
+            if(Console.ReadKey().Key == ConsoleKey.Y)
+            {
+                bRepeateFlag = true;
+            }
+            else
+            {
+                bRepeateFlag = false;
             }
         }
 
@@ -80,17 +80,22 @@ namespace Task1
 
         private static double InputValue()
         {
-            string readVal = Console.ReadLine();
+            
             double dValue;
+            bool isNumber;
+            do
+            {
+                string readVal = Console.ReadLine();
+                if (isNumber = Double.TryParse(readVal, out dValue))
+                {
+                    Console.WriteLine("\nValue adding - success!\n");
+                }
+                else
+                {
+                    Console.WriteLine("Error! " + readVal + " is not a number!");
+                }
+            } while (!isNumber);
 
-            if (isNumber = Double.TryParse(readVal, out dValue))
-            {
-                Console.WriteLine("\nValue adding - success!\n");
-            }
-            else
-            {
-                Console.WriteLine("Error! " + readVal + " is not a number!");
-            }
 
             return dValue;
         }
