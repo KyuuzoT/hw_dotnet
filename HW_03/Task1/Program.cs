@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Task1
 {
@@ -6,15 +7,12 @@ namespace Task1
     {
         private static bool bRepeateFlag = true;
         static void Main(string[] args)
-        {
-            
+        {            
             while (bRepeateFlag)
             {
                 Menu();
             }
-
-            Console.ReadKey();
-
+            Thread.Sleep(1000);
         }
 
         private static void Menu()
