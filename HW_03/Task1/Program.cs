@@ -78,7 +78,7 @@ namespace Task1
             }
         }
 
-        private static void InputTwoParametrs(out double firstValue, out double secondValue)
+        public static void InputTwoParametrs(out double firstValue, out double secondValue)
         {
             Console.WriteLine("First parameter: ");
             firstValue = InputValue();
@@ -87,7 +87,7 @@ namespace Task1
             secondValue = InputValue();
         }
 
-        private static double InputValue()
+        public static double InputValue()
         {
             
             double dValue;
