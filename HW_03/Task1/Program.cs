@@ -71,6 +71,7 @@ namespace Task1
             if(Console.ReadKey().Key == ConsoleKey.Y)
             {
                 bRepeateFlag = true;
+                Console.WriteLine("\n");
             }
             else
             {

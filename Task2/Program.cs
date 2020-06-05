@@ -60,7 +60,7 @@ namespace Task2
                     Console.WriteLine($"Quotient of A={firstValue} and B={secondValue} equals to {result}");
                     break;
                 case "5":
-                    Console.WriteLine("Input radius to perform calculation:\n");
+                    Console.WriteLine("Input radius to perform calculation:");
                     radius = InputValue();
                     Console.WriteLine($"Area of circle with radius R={radius} equals to S={Calculator.AreaOfCircle(radius)}");
                     break;
@@ -74,6 +74,7 @@ namespace Task2
             if (Console.ReadKey().Key == ConsoleKey.Y)
             {
                 bRepeateFlag = true;
+                Console.WriteLine("\n");
             }
             else
             {
