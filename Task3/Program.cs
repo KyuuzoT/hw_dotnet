@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Task3
@@ -15,20 +16,56 @@ namespace Task3
             string sName = Console.ReadLine();
             Console.WriteLine($"Hello, {sName}, how would you like to input your birthday date?");
             Console.WriteLine("\t1. Full date of birth in format: {0:d}", new DateTime(1970, 1, 1));
-            Console.WriteLine("\t2. Only day and month");
+            Console.WriteLine("\t2. Only year and month");
             string choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
+                    InputBirthdayDTFormatt(sName);
                     break;
                 case "2":
+                    InputYearAndMonth(sName);
                     break;
                 default:
                     Console.WriteLine("Input unresolved!");
-                    break;
+                    Thread.Sleep(1000);
+                    return;
             }
-            InputBirthdayDTFormatt(sName);
+
             Console.Read();
+        }
+
+        private static void InputYearAndMonth(string sName)
+        {
+            int year;
+            int month;
+            do
+            {
+                Console.WriteLine("\nInput month: ");
+                string sMonth = Console.ReadLine();
+                if (int.TryParse(sMonth, out month))
+                {
+                    if (month >= 1 && month <= 12)
+                    {
+                        break;
+                    }
+                }
+                Console.WriteLine("\nIncorrect month. Try again.\n");
+            } while (true);
+
+            do
+            {
+                Console.WriteLine("\nInput year: ");
+                string sYear = Console.ReadLine();
+                if (int.TryParse(sYear, out year))
+                {
+                    if (year >= 1820 && year <= 2020)
+                    {
+                        break;
+                    }
+                }
+                Console.WriteLine("\nIncorrect year. Try again.\n");
+            } while (true);
         }
 
         private static void InputBirthdayDTFormatt(string sName)
@@ -56,14 +93,14 @@ namespace Task3
         {
             bHappyBirthday = false;
             int years = currentDT.Year - birthdayDT.Year;
-            if(currentDT.DayOfYear < birthdayDT.DayOfYear)
+            if (currentDT.DayOfYear < birthdayDT.DayOfYear)
             {
-                years--;                
+                years--;
             }
-            else if(currentDT.DayOfYear == birthdayDT.DayOfYear)
+            else if (currentDT.DayOfYear == birthdayDT.DayOfYear)
             {
                 bHappyBirthday = true;
-            }            
+            }
             return years;
         }
     }
