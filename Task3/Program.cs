@@ -13,12 +13,25 @@ namespace Task3
         {
             Console.WriteLine("Please input your name:");
             string sName = Console.ReadLine();
-            int age;
-            age = InputBirthdayDTFormatt(sName);
+            Console.WriteLine($"Hello, {sName}, how would you like to input your birthday date?");
+            Console.WriteLine("\t1. Full date of birth in format: {0:d}", new DateTime(1970, 1, 1));
+            Console.WriteLine("\t2. Only day and month");
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    break;
+                case "2":
+                    break;
+                default:
+                    Console.WriteLine("Input unresolved!");
+                    break;
+            }
+            InputBirthdayDTFormatt(sName);
             Console.Read();
         }
 
-        private static int InputBirthdayDTFormatt(string sName)
+        private static void InputBirthdayDTFormatt(string sName)
         {
             int age;
             DateTime currentDT = DateTime.Now;
@@ -37,8 +50,6 @@ namespace Task3
                 Console.WriteLine($"So, {sName}, today is your birthday! We wish you best luck!");
                 Console.ResetColor();
             }
-
-            return age;
         }
 
         private static int GetAge(DateTime birthdayDT, DateTime currentDT)

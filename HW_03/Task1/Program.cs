@@ -62,7 +62,7 @@ namespace Task1
                     Console.WriteLine($"Area of circle with radius R={radius} equals to S={calc.AreaOfCircle(radius)}");
                     break;
                 default:
-                    Console.WriteLine("Input unressolved. Please try again!\n\n");
+                    Console.WriteLine("Input unresolved. Please try again!\n\n");
                     bRepeateFlag = true;
                     return;
             }
