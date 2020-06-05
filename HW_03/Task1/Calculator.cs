@@ -28,7 +28,7 @@ namespace Task1
         {
             return firstVar%secondVar;
         }
-        public double SquareOfCircle(double radius)
+        public double AreaOfCircle(double radius)
         {
             return Math.PI*radius*radius;
         }

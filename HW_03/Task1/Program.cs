@@ -7,20 +7,23 @@ namespace Task1
         private static bool bRepeateFlag = true;
         static void Main(string[] args)
         {
-            double firstValue = 0;
-            double secondValue = 0;
-            double radius = 0;
+            
             while (bRepeateFlag)
             {
-                Menu(ref firstValue, ref secondValue, ref radius);
+                Menu();
             }
 
             Console.ReadKey();
 
         }
 
-        private static void Menu(ref double firstValue, ref double secondValue, ref double radius)
+        private static void Menu()
         {
+            double firstValue = 0;
+            double secondValue = 0;
+            double radius = 0;
+            double result;
+            Calculator calc = new Calculator();
             Console.WriteLine("This program could perform several actions:");
             Console.WriteLine("\t1. Calculate sum of two numbers;");
             Console.WriteLine("\t2. Calculate difference of two numbers;");
@@ -34,22 +37,31 @@ namespace Task1
                 case "1":
                     Console.WriteLine("Input parameters for calculating:\n");
                     InputTwoParametrs(out firstValue, out secondValue);
+                    result = calc.Addition(firstValue, secondValue);
+                    Console.WriteLine($"Sum of A={firstValue} and B={secondValue} equals to {result}");                    
                     break;
                 case "2":
                     Console.WriteLine("Input parameters for calculating:\n");
                     InputTwoParametrs(out firstValue, out secondValue);
+                    result = calc.Subtraction(firstValue, secondValue);
+                    Console.WriteLine($"Difference of A={firstValue} and B={secondValue} equals to {result}");
                     break;
                 case "3":
                     Console.WriteLine("Input parameters for calculating:\n");
                     InputTwoParametrs(out firstValue, out secondValue);
+                    result = calc.Multiplication(firstValue, secondValue);
+                    Console.WriteLine($"Product of A={firstValue} and B={secondValue} equals to {result}");
                     break;
                 case "4":
                     Console.WriteLine("Input parameters for calculating:\n");
                     InputTwoParametrs(out firstValue, out secondValue);
+                    result = calc.Division(firstValue, secondValue);
+                    Console.WriteLine($"Quotient of A={firstValue} and B={secondValue} equals to {result}");
                     break;
                 case "5":
                     Console.WriteLine("Input radius to perform calculation:\n");
                     radius = InputValue();
+                    Console.WriteLine($"Area of circle with radius R={radius} equals to S={calc.AreaOfCircle(radius)}");
                     break;
                 default:
                     Console.WriteLine("Input unressolved. Please try again!\n\n");
