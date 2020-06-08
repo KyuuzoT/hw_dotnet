@@ -27,11 +27,13 @@ namespace Task2
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Your answer \"{result}\" is incorrect! " +
                     $"Correct answer is \"{firstVal + secondVal}\"");
+                Console.ResetColor();
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"Congratulations! Your answer \"{result}\" is correct!");
+                Console.ResetColor();
             }
         }
 
