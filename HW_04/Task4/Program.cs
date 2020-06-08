@@ -41,8 +41,8 @@ namespace Task4
             firstVal = InputValue("first variable");
             secondVal = InputValue("second variable");
             calculatedResult = Calculate(firstVal, secondVal);
-            result = InputValue($"result of addition {firstVal} and {secondVal}");
-            if (result != firstVal + secondVal)
+            result = InputValue($"result of choosen operation between {firstVal} and {secondVal}");
+            if (result != calculatedResult)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Your answer \"{result}\" is incorrect! ");
@@ -64,12 +64,16 @@ namespace Task4
             switch (CurrentOperation)
             {
                 case Operations.Addition:
+                    result = Arithmetic.Addition(firstVal, secondVal);
                     break;
                 case Operations.Subtraction:
+                    result = Arithmetic.Subtraction(firstVal, secondVal);
                     break;
                 case Operations.Multiplication:
+                    result = Arithmetic.Multiplication(firstVal, secondVal);
                     break;
                 case Operations.Division:
+                    result = Arithmetic.Division(firstVal, secondVal);
                     break;
                 case Operations.NoOperation:
                     Console.WriteLine("Operation is invalid!");
@@ -90,15 +94,15 @@ namespace Task4
             switch (operation)
             {
                 case "+":
-                    break;
+                    return Operations.Addition;
                 case "-":
-                    break;
+                    return Operations.Subtraction;
                 case "*":
-                    break;
+                    return Operations.Division;
                 case "/":
-                    break;
+                    return Operations.Multiplication;
                 default:
-                    break;
+                    return Operations.NoOperation;
             }
         }
 
