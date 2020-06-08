@@ -10,6 +10,12 @@ namespace Task6
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Menu:");
+            Console.WriteLine("\t1. Press W - to move upwards");
+            Console.WriteLine("\t2. Press S - to move downwards");
+            Console.WriteLine("\t3. Press A - to move leftwards");
+            Console.WriteLine("\t4. Press D - to move rightwards");
+            Console.WriteLine("\t4. Press Esc - to exit the game");
             while (true)
             {
                 ConsoleKeyInfo input = Console.ReadKey();
