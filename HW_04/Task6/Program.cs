@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task6
 {
@@ -16,6 +12,7 @@ namespace Task6
             Console.WriteLine("\t3. Press A - to move leftwards");
             Console.WriteLine("\t4. Press D - to move rightwards");
             Console.WriteLine("\t4. Press Esc - to exit the game");
+
             while (true)
             {
                 ConsoleKeyInfo input = Console.ReadKey();
@@ -41,7 +38,6 @@ namespace Task6
                         break;
                 }
             }
-
         }
     }
 }
