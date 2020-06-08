@@ -18,10 +18,21 @@ namespace Task2
         {
             double firstVal;
             double secondVal;
-            firstVal = InputValue("first");
-            secondVal = InputValue("second");
-
-            Console.WriteLine($"Sum of {firstVal} and {secondVal} equals to {firstVal + secondVal}");
+            double result;
+            firstVal = InputValue("first variable");
+            secondVal = InputValue("second variable");
+            result = InputValue($"result of addition {firstVal} and {secondVal}");
+            if(result != firstVal + secondVal)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"Your answer \"{result}\" is incorrect! " +
+                    $"Correct answer is \"{firstVal + secondVal}\"");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Congratulations! Your answer \"{result}\" is correct!");
+            }
         }
 
         private static double InputValue(string strVar)
@@ -30,7 +41,7 @@ namespace Task2
             string input;
             while (true)
             {
-                Console.WriteLine($"Please, input {strVar} variable:");
+                Console.WriteLine($"Please, input {strVar}:");
                 input = Console.ReadLine();
                 if (Double.TryParse(input, out value))
                 {
