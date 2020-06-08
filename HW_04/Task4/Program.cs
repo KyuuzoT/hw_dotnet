@@ -59,32 +59,24 @@ namespace Task4
 
         private static double Calculate(double firstVal, double secondVal)
         {
-            double result;
             CurrentOperation = InputOperation();
             switch (CurrentOperation)
             {
                 case Operations.Addition:
-                    result = Arithmetic.Addition(firstVal, secondVal);
-                    break;
+                    return Arithmetic.Addition(firstVal, secondVal);
                 case Operations.Subtraction:
-                    result = Arithmetic.Subtraction(firstVal, secondVal);
-                    break;
+                    return Arithmetic.Subtraction(firstVal, secondVal);
                 case Operations.Multiplication:
-                    result = Arithmetic.Multiplication(firstVal, secondVal);
-                    break;
+                    return Arithmetic.Multiplication(firstVal, secondVal);
                 case Operations.Division:
-                    result = Arithmetic.Division(firstVal, secondVal);
-                    break;
+                    return Arithmetic.Division(firstVal, secondVal);
                 case Operations.NoOperation:
                     Console.WriteLine("Operation is invalid!");
-                    result = 0;
-                    break;
+                    return 0;
                 default:
                     Console.WriteLine("Can not resolve operation");
-                    result = double.NaN;
-                    break;
+                    return double.NaN;
             }
-            return result;
         }
 
         private static Operations InputOperation()
