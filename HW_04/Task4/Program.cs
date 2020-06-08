@@ -18,6 +18,7 @@ namespace Task4
         };
 
         private static Operations CurrentOperation = Operations.NoOperation;
+
         static void Main(string[] args)
         {
             ConsoleKeyInfo again;
@@ -38,6 +39,7 @@ namespace Task4
             double secondVal;
             double result;
             double calculatedResult;
+
             firstVal = InputValue("first variable");
             secondVal = InputValue("second variable");
             calculatedResult = Calculate(firstVal, secondVal);
