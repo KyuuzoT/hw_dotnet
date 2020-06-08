@@ -13,7 +13,7 @@ namespace Task4
             ConsoleKeyInfo again;
             do
             {
-                SumOfNumbers();
+                Equation();
                 Console.WriteLine("Again (Y,N)?");
                 again = Console.ReadKey();
                 Console.WriteLine();
@@ -22,7 +22,7 @@ namespace Task4
             Console.ReadKey();
         }
 
-        private static void SumOfNumbers()
+        private static void Equation()
         {
             double firstVal;
             double secondVal;
