@@ -10,7 +10,15 @@ namespace Task3
     {
         static void Main(string[] args)
         {
-            SumOfNumbers();
+            ConsoleKeyInfo again;
+            do
+            {
+                SumOfNumbers();
+                Console.WriteLine("Again (Y,N)?");
+                again = Console.ReadKey();
+                Console.WriteLine();
+            } while (again.Key != ConsoleKey.N);
+            
             Console.ReadKey();
         }
 
@@ -25,8 +33,8 @@ namespace Task3
             if (result != firstVal + secondVal)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"Your answer \"{result}\" is incorrect! " +
-                    $"Correct answer is \"{firstVal + secondVal}\"");
+                Console.WriteLine($"Your answer \"{result}\" is incorrect! ");
+                CheckAnswer(firstVal, secondVal, result);
                 Console.ResetColor();
             }
             else
@@ -34,6 +42,18 @@ namespace Task3
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"Congratulations! Your answer \"{result}\" is correct!");
                 Console.ResetColor();
+            }
+        }
+
+        private static void CheckAnswer(double firstVal, double secondVal, double result)
+        {
+            if(result < (secondVal + firstVal))
+            {
+                Console.WriteLine($"Your answer should be greater than {result}");
+            }
+            else
+            {
+                Console.WriteLine($"Your answer should be less than {result}");
             }
         }
 
