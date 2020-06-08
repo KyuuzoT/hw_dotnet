@@ -10,8 +10,14 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            SumOfNumbers();
-            Console.ReadKey();
+            ConsoleKeyInfo again;
+            do
+            {
+                SumOfNumbers();
+                Console.WriteLine("Again (Y,N)?");
+                again = Console.ReadKey();
+                Console.WriteLine();
+            } while (again.Key != ConsoleKey.N);
         }
 
         private static void SumOfNumbers()
