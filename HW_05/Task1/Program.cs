@@ -11,14 +11,26 @@ namespace Task1
             double[] inputArray = new double[ArraySize];
             double[] sumArray = new double[ArraySize];
 
-            ArrayFillWithRandoms(out randomArray);
-
+            
+            PrintArray(randomArray);
             Console.ReadKey();
+        }        
+
+        private static void PrintArray(double[] array)
+        {
+            foreach (double item in array)
+            {
+                Console.Write($"{item} ");
+            }
         }
 
-        private static void ArrayFillWithRandoms(out double[] array)
+        private static void PrintArray(double[] array, string name)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{name}: ");
+            foreach (double item in array)
+            {
+                Console.Write($"{item} ");
+            }
         }
     }
 }
