@@ -15,7 +15,9 @@ namespace Task1
             ArrayFillWithConsole(out inputArray);
             ArrayFillWithSumOfArrays(randomArray, inputArray, out sumArray);
 
-            PrintArray(randomArray);
+            PrintArray(randomArray, "Random");
+            PrintArray(inputArray, "From inputs");
+            PrintArray(sumArray, "Sum of two arrays");
             Console.ReadKey();
         }
 
