@@ -11,13 +11,14 @@ namespace Task2
             double[] inputArray = new double[ArraySize];
             FillArrayWithInput(out inputArray, ArraySize);
 
+            PrintArray(inputArray);
             Console.ReadKey();
         }
 
         private static void FillArrayWithInput(out double[] array, int size)
         {
             array = new double[size];
-            string tempStr;
+            
             GetExcludedIndex(size, ref ExcludedIndex);
             Console.WriteLine($"Please, input {size - 1} numbers to fill array:");
             for (int i = 0; i < size; i++)
@@ -27,13 +28,21 @@ namespace Task2
                     Console.WriteLine($"{ExcludedIndex} was excluded!");
                     continue;
                 }
-                Console.Write($"{i} number: ");
-                tempStr = Console.ReadLine();
-                if(!Double.TryParse(tempStr, out array[i]))
-                {
-                    Console.WriteLine("Wrong input! Try again!");
-                    i--;
-                }
+
+                GetInputNumber(out array[i], ref i);
+            }
+        }
+
+        private static void GetInputNumber(out double number, ref int position)
+        {
+            string tempStr;
+            Console.Write($"{position} number: ");
+            tempStr = Console.ReadLine();
+
+            if (!Double.TryParse(tempStr, out number))
+            {
+                Console.WriteLine("Wrong input! Try again!");
+                position--;
             }
         }
 
