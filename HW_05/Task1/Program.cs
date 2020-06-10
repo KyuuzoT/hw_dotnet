@@ -11,17 +11,15 @@ namespace Task1
             double[] inputArray = new double[ArraySize];
             double[] sumArray = new double[ArraySize];
 
-            ArrayFillWithRandoms(out randomArray);
-            ArrayFillWithConsole(out inputArray);
-            ArrayFillWithSumOfArrays(randomArray, inputArray, out sumArray);
+            ArrayUtils.ArrayFillWithRandoms(out randomArray, ArraySize);
+            ArrayUtils.ArrayFillWithConsole(out inputArray, ArraySize);
+            ArrayUtils.ArrayFillWithSumOfArrays(randomArray, inputArray, out sumArray, ArraySize);
 
             PrintArray(randomArray, "Random");
             PrintArray(inputArray, "From inputs");
             PrintArray(sumArray, "Sum of two arrays");
             Console.ReadKey();
         }
-
-        
 
         private static void PrintArray(double[] array)
         {
@@ -33,7 +31,7 @@ namespace Task1
 
         private static void PrintArray(double[] array, string name)
         {
-            Console.WriteLine($"{name}: ");
+            Console.WriteLine($"\n{name}: ");
             foreach (double item in array)
             {
                 Console.Write($"{item} ");
