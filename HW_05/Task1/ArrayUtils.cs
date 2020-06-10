@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Task_5_1
+namespace Task1
 {
     class ArrayUtils
     {
