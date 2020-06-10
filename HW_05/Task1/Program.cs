@@ -13,6 +13,7 @@ namespace Task1
 
             ArrayFillWithRandoms(out randomArray);
             ArrayFillWithConsole(out inputArray);
+            ArrayFillWithSumOfArrays(randomArray, inputArray, out sumArray);
 
             PrintArray(randomArray);
             Console.ReadKey();
@@ -42,6 +43,15 @@ namespace Task1
                     Console.WriteLine("\nWrong number, try again!");
                     --i;
                 }
+            }
+        }
+
+        private static void ArrayFillWithSumOfArrays(double[] first, double[] second, out double[] sum)
+        {
+            sum = new double[ArraySize];
+            for (int i = 0; i < sum.Length; i++)
+            {
+                sum[i] = first[i] + second[i];
             }
         }
 
