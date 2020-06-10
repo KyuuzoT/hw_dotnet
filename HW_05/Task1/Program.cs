@@ -12,6 +12,7 @@ namespace Task1
             double[] sumArray = new double[ArraySize];
 
             ArrayFillWithRandoms(out randomArray);
+            ArrayFillWithConsole(out inputArray);
 
             PrintArray(randomArray);
             Console.ReadKey();
@@ -24,6 +25,23 @@ namespace Task1
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = rnd.Next(1, 999);
+            }
+        }
+
+        private static void ArrayFillWithConsole(out double[] array)
+        {
+            array = new double[ArraySize];
+            string tempStr;
+            Console.WriteLine($"Please, input {ArraySize} number in order to fill array: ");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{i + 1} number: ");
+                tempStr = Console.ReadLine();
+                if (!double.TryParse(tempStr, out array[i]))
+                {
+                    Console.WriteLine("\nWrong number, try again!");
+                    --i;
+                }
             }
         }
 
