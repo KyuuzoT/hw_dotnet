@@ -42,5 +42,22 @@ namespace Task2
             Random rnd = new Random();
             excludedIndex = rnd.Next(0, size);
         }
+
+        private static void PrintArray(double[] array)
+        {
+            foreach (double item in array)
+            {
+                Console.Write($"{item} ");
+            }
+        }
+
+        private static void PrintArray(double[] array, string name)
+        {
+            Console.WriteLine($"\n{name}: ");
+            foreach (double item in array)
+            {
+                Console.Write($"{item} ");
+            }
+        }
     }
 }
