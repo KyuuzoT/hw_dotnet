@@ -17,20 +17,17 @@ namespace Task4Additional
             timer.Start();
             FillArray(out initArray);
             timer.Stop();
-            PrintArray(initArray, "Initial Array");
             Console.WriteLine($"Filling an array time: {timer.ElapsedMilliseconds}");
 
             timer.Start();
             double[] revArray = ReverseArray(initArray);
             timer.Stop();
-            PrintArray(revArray, "Reversed Array using my method");
             Console.WriteLine($"Time of reversing an array with my method equals to {timer.ElapsedMilliseconds}");
 
             double[] sysArray = initArray;
             timer.Start();
             Array.Reverse(sysArray);
             timer.Stop();
-            PrintArray(sysArray, "Reversed with system's method");
             Console.WriteLine($"Time of reversing an array with system method equals to {timer.ElapsedMilliseconds}");
 
             Console.ReadKey();
