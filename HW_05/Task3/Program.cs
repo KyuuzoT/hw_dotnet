@@ -15,8 +15,12 @@ namespace Task3
             FillArray(out initArray);
             PrintArray(initArray, "Initial Array");
             double[] revArray = ReverseArray(initArray);
-            PrintArray(revArray, "Reversed Array");
+            PrintArray(revArray, "Reversed Array using my method");
 
+            double[] sysArray = initArray;
+            Array.Reverse(sysArray);
+            PrintArray(sysArray,"Reversed with system's method");
+            
             Console.ReadKey();
         }
 
