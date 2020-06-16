@@ -11,6 +11,8 @@ namespace Task2
         static void Main(string[] args)
         {
             string text = RandomTextGenerator.GenerateText();
+
+            Console.ReadKey();
         }
     }
 }
