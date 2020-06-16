@@ -9,6 +9,7 @@ namespace Task2
     class RandomTextGenerator
     {
         private static string CharSequence = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private static string MarksSequence = ".,:;";
         private static string Delimiter = " ";
         public static int WordsQuantity = 40;
         public static int WordMaxLength = 15;
@@ -25,7 +26,14 @@ namespace Task2
                 }
                 if(i<WordsQuantity-1)
                 {
-                    builder.Append(Delimiter);
+                    if(rnd.Next(1,100) > 75)
+                    {
+                        builder.Append(MarksSequence[rnd.Next(MarksSequence.Length)]).Append(Delimiter);
+                    }
+                    else
+                    {
+                        builder.Append(Delimiter);
+                    }
                 }
             }
             return builder.ToString();
