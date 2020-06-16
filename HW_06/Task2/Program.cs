@@ -12,10 +12,14 @@ namespace Task2
         {
             string text = RandomTextGenerator.GenerateText();
             Console.WriteLine(text+"\n");
+
             string[] textArray;
             textArray = StringToArray(text);
-            PrintArray(textArray);
-            RemoveLongestWord(text);
+            Utils.PrintArray(textArray, true);
+
+            string sorted = Utils.BuildString(textArray);
+            RemoveLongestWord(sorted);
+
             SwapLongestShortest(text);
             CountSymbols(text);            
             
@@ -24,6 +28,16 @@ namespace Task2
 
         private static void RemoveLongestWord(string text)
         {
+            int spaceIndex;
+            for (spaceIndex = 0; spaceIndex < text.Length; spaceIndex++)
+            {
+                if(text[spaceIndex] == ' ')
+                {
+                    break;
+                }
+            }
+            text = text.Remove(0, spaceIndex);
+            Console.WriteLine($"\n{text}");
         }
 
         private static void SwapLongestShortest(string text)
@@ -36,47 +50,10 @@ namespace Task2
 
         private static string[] StringToArray(string text)
         {
+            Utils.RemovePunctuationMarks(ref text);
             string[] textArray = text.Split(' ');
             textArray = textArray.OrderByDescending(x => x.Length).ToArray();
             return textArray;
-        }
-
-        private static void PrintArray<T>(T[] array, bool newLine)
-        {
-            if(newLine)
-            {
-                foreach (var item in array)
-                {
-                    Console.WriteLine($"{item} ");
-                }
-            }
-            else
-            {
-                foreach (var item in array)
-                {
-                    Console.Write($"{item} ");
-                }
-            }
-            
-        }
-
-        private static void PrintArray<T>(T[] array, string name, bool newLine)
-        {
-            Console.WriteLine($"\n{name}: ");
-            if (newLine)
-            {
-                foreach (var item in array)
-                {
-                    Console.WriteLine($"{item} ");
-                }
-            }
-            else
-            {
-                foreach (var item in array)
-                {
-                    Console.Write($"{item} ");
-                }
-            }
-        }
+        }        
     }
 }

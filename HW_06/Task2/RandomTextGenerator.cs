@@ -9,7 +9,7 @@ namespace Task2
     class RandomTextGenerator
     {
         private static string CharSequence = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        private static string MarksSequence = ".,:;";
+        public static string MarksSequence = ".,:;";
         private static string Delimiter = " ";
         public static int WordsQuantity = 40;
         public static int WordMaxLength = 15;
