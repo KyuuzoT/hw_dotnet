@@ -48,12 +48,12 @@ namespace AssemblyOne
             isRedisigned = false;
         }
 
-        protected void StartEngine()
+        protected virtual void StartEngine()
         {
             Console.WriteLine("Engine goes \"Wroom-Wroom\"!");
         }
 
-        internal void StopEngine()
+        internal virtual void StopEngine()
         {
             Console.WriteLine("Engine goes \"Tphruuuuum\"! And... silence!");
         }
