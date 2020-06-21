@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyOne", "HW_07\Assemb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyTwo", "HW_07\AssemblyTwo\AssemblyTwo.csproj", "{C35B172F-2E54-46D0-B205-106553B56716}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringLettersCounting", "HW_07\StringLettersCounting\StringLettersCounting.csproj", "{917E721A-D64E-4F6D-AE85-7D4655110B05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{C35B172F-2E54-46D0-B205-106553B56716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C35B172F-2E54-46D0-B205-106553B56716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C35B172F-2E54-46D0-B205-106553B56716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{917E721A-D64E-4F6D-AE85-7D4655110B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{917E721A-D64E-4F6D-AE85-7D4655110B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{917E721A-D64E-4F6D-AE85-7D4655110B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{917E721A-D64E-4F6D-AE85-7D4655110B05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{FAA61FAB-2346-4EDC-A867-75C4591C21D5} = {D480B1A9-5C40-411E-B23F-B3C7C6229D71}
 		{3C050CC7-0CC4-40C0-AA31-F181FE82384C} = {A80005E3-880E-497C-A4DB-6B246EC12841}
 		{C35B172F-2E54-46D0-B205-106553B56716} = {A80005E3-880E-497C-A4DB-6B246EC12841}
+		{917E721A-D64E-4F6D-AE85-7D4655110B05} = {A80005E3-880E-497C-A4DB-6B246EC12841}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {56C58A5C-6B01-432F-BBE1-57D557AEC413}
