@@ -11,8 +11,25 @@ namespace AssemblyOne
         protected new bool isRedisigned;
         public string Model;
 
-        protected override void StartEngine()
+        public SportBike()
         {
+            Model = "Harley Davidson";
+        }
+
+        public SportBike(string model)
+        {
+            Model = model;
+        }
+
+        public SportBike (string model, bool redisigned)
+        {
+            Model = model;
+            isRedisigned = redisigned;
+        }
+
+        protected internal override void StartEngine()
+        {
+            Console.WriteLine("Start Engine in class SportBike:");
             string sound = MakeSound();
             if(string.IsNullOrEmpty(sound))
             {
@@ -20,7 +37,7 @@ namespace AssemblyOne
             }
             else
             {
-                Console.WriteLine(sound);
+                Console.WriteLine($"\t{sound}");
             }           
         }
 

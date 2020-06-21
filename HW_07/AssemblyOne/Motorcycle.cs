@@ -48,19 +48,22 @@ namespace AssemblyOne
             isRedisigned = false;
         }
 
-        protected virtual void StartEngine()
+        protected internal virtual void StartEngine()
         {
-            Console.WriteLine("Engine goes \"Wroom-Wroom\"!");
+            Console.WriteLine("Start Engine:");
+            Console.WriteLine("\tEngine goes \"Wroom-Wroom\"!");
         }
 
         internal virtual void StopEngine()
         {
-            Console.WriteLine("Engine goes \"Tphruuuuum\"! And... silence!");
+            Console.WriteLine("Stop Engine:");
+            Console.WriteLine("\tEngine goes \"Tphruuuuum\"! And... silence!");
         }
 
         protected internal void TurnOnCoolMusic()
         {
-            Console.WriteLine("♫♪♫Back in black\nI hit the sack\nI’ve been too long I’m glad to be back!♫♪♫");
+            Console.WriteLine("Cool Music:");
+            Console.WriteLine("\t♫♪♫Back in black\t\nI hit the sack\t\nI’ve been too long I’m glad to be back!♫♪♫");
         }
     }
 }
