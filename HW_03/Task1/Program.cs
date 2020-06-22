@@ -89,8 +89,7 @@ namespace Task1
         }
 
         private static double InputValue()
-        {
-            
+        {            
             double dValue;
             bool isNumber;
             do
@@ -105,7 +104,6 @@ namespace Task1
                     Console.WriteLine("Error! " + readVal + " is not a number!");
                 }
             } while (!isNumber);
-
 
             return dValue;
         }
