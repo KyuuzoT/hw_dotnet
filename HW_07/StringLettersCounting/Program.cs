@@ -1,14 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace StringLettersCounting
 {
     class Program
     {
-        static SortedDictionary<char, int> Letters = new SortedDictionary<char, int>();
+        static SortedDictionary<char, int> LettersDictionary = new SortedDictionary<char, int>();
+
+        struct Letters : IComparable
+        {
+            public char Letter;
+            public int NumberInOrder;
+
+            public int CompareTo(object obj)
+            {
+                Letters letters = (Letters)obj;
+                return this.Letter.CompareTo(letters.Letter);
+            }
+        }
+
+        static Letters[] LettersArray = { };
 
         static void Main(string[] args)
         {
@@ -22,12 +34,18 @@ namespace StringLettersCounting
             }
 
             ParseInputString(input);
-            foreach (var pair in Letters)
+            foreach (var pair in LettersDictionary)
             {
                 builder.Append(pair.Value).Append(pair.Key);
             }
+            Console.WriteLine($"Result of counting: \"{builder.ToString()}\" -  using dictionary");
 
-            Console.WriteLine($"Result of counting: \"{builder.ToString()}\"");
+            builder = new StringBuilder();
+            for (int i = 0; i < LettersArray.Length; i++)
+            {
+                builder.AppendFormat("{0}{1}", LettersArray[i].NumberInOrder, LettersArray[i].Letter);
+            }
+            Console.WriteLine($"Result of counting: \"{builder.ToString()}\" -  using array of structures");
             Console.ReadKey();
         }
 
@@ -38,22 +56,40 @@ namespace StringLettersCounting
             {
                 if(char.IsLetter(ch))
                 {
-                    CountLettersInText(ch);
+                    CountLettersInText(ch); //with dictionary
+                    CountLettersInTextWithArrays(ch); //With arrays
                 }
             }
+            Array.Sort(LettersArray);          
+        }
+
+        private static void CountLettersInTextWithArrays(char ch)
+        {
+            for (int i = 0; i < LettersArray.Length; i++)
+            {
+                if(LettersArray[i].Letter.Equals(ch))
+                {
+                    LettersArray[i].NumberInOrder++;
+                    return;
+                }
+            }
+
+            Array.Resize(ref LettersArray, LettersArray.Length + 1);
+            LettersArray[LettersArray.Length - 1].Letter = ch;
+            LettersArray[LettersArray.Length - 1].NumberInOrder = 1;
         }
 
         private static void CountLettersInText(char ch)
         {
             int value;
-            if(Letters.TryGetValue(ch,out value))
+            if(LettersDictionary.TryGetValue(ch,out value))
             {
-                Letters[ch]++;
+                LettersDictionary[ch]++;
             }
             else
             {
                 value = 1;
-                Letters.Add(ch, value);
+                LettersDictionary.Add(ch, value);
             }
         }
     }
