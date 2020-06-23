@@ -46,6 +46,7 @@ namespace StringLettersCounting
                 builder.AppendFormat("{0}{1}", LettersArray[i].NumberInOrder, LettersArray[i].Letter);
             }
             Console.WriteLine($"Result of counting: \"{builder.ToString()}\" -  using array of structures");
+
             Console.ReadKey();
         }
 
