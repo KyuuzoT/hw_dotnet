@@ -8,21 +8,14 @@ namespace Task2
 {
     class Door
     {
-        private string _color;
+        private Colors _color;
 
-        public string Color
+        public Colors Color
         {
             get { return _color; }
             set
             {
-                if(!string.IsNullOrEmpty(value))
-                {
-                    _color = value;
-                }
-                else
-                {
-                    Console.WriteLine("Door couldn't be painted with void!");
-                }
+                _color = value;
             }
         }
 
