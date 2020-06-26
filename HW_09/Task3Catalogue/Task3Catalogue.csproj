@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Item.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="File.cs" />
+    <Compile Include="MusicFile.cs" />
+    <Compile Include="ProgramFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VideoFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Task3Catalogue
 {
-    class Item
+    class Application
     {
+        public static void Main(string[] args)
+        {
+
+        }
     }
 }

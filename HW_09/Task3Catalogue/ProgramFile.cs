@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task3Catalogue
 {
-    class Program
+    class ProgramFile
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
