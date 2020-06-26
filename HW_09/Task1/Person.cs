@@ -8,5 +8,22 @@ namespace Task1
 {
     class Person
     {
+        private static int _age;
+
+        protected int Age
+        {
+            get { return _age; }
+            set { _age = value; }
+        }
+
+        public void SetAge(int age)
+        {
+            Age = age;
+        }
+
+        public void SayHello()
+        {
+            Console.WriteLine($"Hello, I'm {this.GetType()}");
+        }
     }
 }
