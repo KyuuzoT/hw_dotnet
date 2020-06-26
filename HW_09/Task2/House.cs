@@ -49,7 +49,7 @@ namespace Task2
 
         public void ShowData()
         {
-            Console.WriteLine($"I'm a {this.GetType()}, my area equals to {_area} m².");
+            Console.WriteLine($"I'm a {this.GetType()}, my area equals to {_area} m2.");
         }
 
         public Door GetDoor()
