@@ -22,5 +22,10 @@ namespace Task1
         {
             Console.WriteLine("I'm going to classes!");
         }
+
+        public override void SayHello()
+        {
+            base.SayHello();
+        }
     }
 }

@@ -8,11 +8,16 @@ namespace Task1
 {
     class Teacher : Person
     {
-        private string subject;
+        public string Subject { get; set; }
 
         public void Explain()
         {
             Console.WriteLine("Explanation begins.");
+        }
+
+        public override void SayHello()
+        {
+            Console.WriteLine($"Hello, I'm {this.GetType()} and I'm explaining on {Subject}");
         }
     }
 }

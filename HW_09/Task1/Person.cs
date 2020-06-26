@@ -21,7 +21,7 @@ namespace Task1
             Age = age;
         }
 
-        public void SayHello()
+        public virtual void SayHello()
         {
             Console.WriteLine($"Hello, I'm {this.GetType()}");
         }
