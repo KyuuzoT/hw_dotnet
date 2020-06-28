@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task3Catalogue
 {
@@ -11,7 +7,7 @@ namespace Task3Catalogue
         protected string _director;
         protected string _mainActor;
         protected string _mainActress;
-        protected int _duration;
+        protected float _duration;
 
         public string Director
         {
@@ -76,7 +72,7 @@ namespace Task3Catalogue
             }
         }
 
-        public int Duration
+        public float Duration
         {
             get
             {
@@ -121,7 +117,7 @@ namespace Task3Catalogue
                 $"Film's director: {this._director}\n" +
                 $"Main Actor: {this._mainActor}\n" +
                 $"Main Actress: {this._mainActress}\n" +
-                $"Film's duration: {this._duration}\n";
+                $"Film's duration: {this._duration} minutes\n";
             return result;
         }
     }

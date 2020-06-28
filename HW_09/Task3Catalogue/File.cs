@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task3Catalogue
 {
@@ -99,7 +95,7 @@ namespace Task3Catalogue
                 $"File name: {this._name}\n" +
                 $"File ID: {this._idCode}\n" +
                 $"Category: {this._category}\n" +
-                $"File size: {this._size}\n";
+                $"File size: {this._size} bytes\n";
             return result;
         }
     }

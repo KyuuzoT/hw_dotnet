@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task3Catalogue
 {
     class MusicFile : File
     {
         protected string _singer;
-        protected int _duration;
+        protected float _duration;
         
         public string Singer
         {
@@ -32,7 +28,7 @@ namespace Task3Catalogue
             }
         }
 
-        public int Duration
+        public float Duration
         {
             get
             {
