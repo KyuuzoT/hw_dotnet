@@ -114,5 +114,15 @@ namespace Task3Catalogue
             Console.WriteLine("Not implemented yet.");
             Console.ResetColor();
         }
+
+        public override string GetFileInformation()
+        {
+            string result = base.GetFileInformation() +
+                $"Film's director: {this._director}\n" +
+                $"Main Actor: {this._mainActor}\n" +
+                $"Main Actress: {this._mainActress}\n" +
+                $"Film's duration: {this._duration}\n";
+            return result;
+        }
     }
 }

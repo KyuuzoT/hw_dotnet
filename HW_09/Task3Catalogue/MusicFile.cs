@@ -70,5 +70,13 @@ namespace Task3Catalogue
             Console.WriteLine("Not implemented yet.");
             Console.ResetColor();
         }
+
+        public override string GetFileInformation()
+        {
+            string result = base.GetFileInformation() +
+                $"Singer: {this._singer}\n" +
+                $"Duration: {this._duration}\n";
+            return base.GetFileInformation();
+        }
     }
 }

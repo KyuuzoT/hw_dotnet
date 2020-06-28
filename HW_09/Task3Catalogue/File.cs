@@ -92,5 +92,15 @@ namespace Task3Catalogue
                 }
             }
         }
+
+        public virtual string GetFileInformation()
+        {
+            string result = $"File type: {this.GetType()}\n" +
+                $"File name: {this._name}\n" +
+                $"File ID: {this._idCode}\n" +
+                $"Category: {this._category}\n" +
+                $"File size: {this._size}\n";
+            return result;
+        }
     }
 }
