@@ -87,7 +87,7 @@ namespace Task3Catalogue
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Size can not be negative!");
+                    Console.WriteLine("Size can not be negative and must be greater than 0!");
                     Console.ResetColor();
                 }
             }
