@@ -96,5 +96,23 @@ namespace Task3Catalogue
                 }
             }
         }
+
+        public void Play()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Not implemented yet.");
+            Console.ResetColor();
+        }
+
+        public void RetrieveInformation()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Establishing Internet connection. Stand by.");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Not implemented yet.");
+            Console.ResetColor();
+        }
     }
 }
