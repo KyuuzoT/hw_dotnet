@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static Task_12_1.Passenger.GlobalVars;
 
 namespace Task_12_1.Passenger
 {
@@ -165,9 +166,14 @@ namespace Task_12_1.Passenger
 
         public void PreponderancePayment()
         {
-            if(_luggageWeight > 25)
+            if(_luggageWeight > MaxLuggageWeight)
             {
+                _sumOfPayment += (MaxLuggageWeight - _luggageWeight) * AdditionalPaymentPerKilo;
+            }
 
+            if(_carryOnWeight > MaxCarryOnWeight)
+            {
+                _sumOfPayment += (MaxCarryOnWeight - _carryOnWeight) * AdditionalPaymentPerKilo;
             }
         }
     }
