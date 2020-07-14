@@ -80,7 +80,7 @@ namespace Task_12_1.Passenger
             Console.ForegroundColor = ConsoleColor.Yellow;
             if (age >= 18)
             {
-                Console.WriteLine("According to our notes you're legal age to flight!");
+                Console.WriteLine("You're legal age to flight!");
                 Console.ResetColor();
                 return true;
             }

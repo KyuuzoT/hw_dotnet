@@ -90,18 +90,33 @@ namespace Task_12_1.Airport
             Console.ResetColor();
         }
 
-        public void CheckPerformedCheckIn(Passenger.Passenger passenger)
+        public bool CheckPerformedCheckIn(Passenger.Passenger passenger)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Have you already performed check-in?");
             if (!passenger.OnlineCheckIn)
             {
                 Console.WriteLine("Apparently nor via internet...");
+
+                if (!passenger.AppCheckIn)
+                {
+                    Console.WriteLine("Apparently neither via application");
+                    Console.ResetColor();
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("See your check-in in our application!");
+                    Console.ResetColor();
+                    return true;
+                }
             }
-            else if (!passenger.AppCheckIn)
+            else
             {
-                Console.WriteLine("Apparently neither via application");
+                Console.WriteLine("See your check-in on our site.");
+                Console.ResetColor();
+                return true;
             }
-            Console.WriteLine();
         }
     }
 }

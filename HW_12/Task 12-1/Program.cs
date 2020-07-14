@@ -14,8 +14,12 @@ namespace Task_12_1
             var passenger = CreatePassenger();
 
             Console.WriteLine($"{airport.GetAirportTimeOfDayGreeting()}" +
-                $"{passenger.FullName}!");
-            
+                $"{passenger.FullName}! Welcome to {airport.AirportName}");
+            if (!airport.CheckPerformedCheckIn(passenger))
+            {
+                airport.PerformCheckIn();
+            }
+
 
             Console.ReadKey();
         }
@@ -27,12 +31,14 @@ namespace Task_12_1
             pass.IntroduceYourself();
             pass.SetAge();
             pass.CheckInPerformed();
+            Console.WriteLine("Are you flying with luggage?");
             pass.LuggagePresenceCheck();
             if (pass.HasLuggage)
             {
                pass.LuggageWeight = InputWeight(pass, "luggage");
             }
 
+            Console.WriteLine("Are you flying with carry-on?");
             pass.CarryOnPresenceCheck();
             if (pass.HasCarryOn)
             {
