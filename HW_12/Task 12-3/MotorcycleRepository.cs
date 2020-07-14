@@ -17,9 +17,14 @@ namespace Task_12_3
             return GlobalVars.dbList;
         }
 
-        public Motorcycle GetMotorcycleById(int index)
+        public Motorcycle GetMotorcycleByIndex(int index)
         {
             return GlobalVars.dbList[index];
+        }
+
+        public Motorcycle GetMotorcycleById(Guid ID)
+        {
+            return GlobalVars.dbList.Find(mc => mc.ID == ID);
         }
 
         public void CreateMotorcycle(Motorcycle item)

@@ -10,6 +10,11 @@ namespace Task_12_3
         public string Name { get; set; }
         public string Model { get; set; }
         public short Year { get; set; }
-        public int OdometrValue { get; set; }
+        public int OdometerValue { get; set; }
+
+        public override string ToString()
+        {
+            return $"ID: {ID}. {Model} {Name} assembled in {Year} year. Odometer Value = {OdometerValue} km.";
+        }
     }
 }
