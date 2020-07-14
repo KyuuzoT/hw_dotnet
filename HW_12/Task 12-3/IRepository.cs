@@ -7,10 +7,10 @@ namespace Task_12_3
     interface IRepository <T> where T:class
     {
         IEnumerable<T> GetMotorcycles();
-        T GetMotorcycleById(Guid ID);
+        T GetMotorcycleById(int id);
         void CreateMotorcycle(T item);
         void UpdateMotorcycle(T item);
-        void DeleteMotorcycle(Guid ID);
+        void DeleteMotorcycle(int id);
         void DeleteMotorcycle(T item);
     }
 }
