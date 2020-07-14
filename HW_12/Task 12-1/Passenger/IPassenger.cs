@@ -7,5 +7,6 @@ namespace Task_12_1.Passenger
     interface IPassenger
     {
         void PreponderancePayment();
+        string ProvidePassport();
     }
 }

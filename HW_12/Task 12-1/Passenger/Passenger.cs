@@ -11,6 +11,11 @@ namespace Task_12_1.Passenger
         {
             public string FirstName;
             public string Surname;
+
+            public override string ToString()
+            {
+                return $"{FirstName} {Surname}";
+            }
         }
 
         private Name _fullName;
@@ -63,10 +68,6 @@ namespace Task_12_1.Passenger
                 else
                 {
                     _age = value;
-                    if (value < 18)
-                    {
-                        _isLegalAge = true;
-                    }
                 }
 
             }
@@ -75,6 +76,7 @@ namespace Task_12_1.Passenger
         public bool IsLegalAge
         {
             get => _isLegalAge;
+            set => _isLegalAge = value;
         }
 
         public bool OnlineCheckIn
@@ -164,6 +166,11 @@ namespace Task_12_1.Passenger
             }
         }
 
+        public int SumOfPayment
+        {
+            get => _sumOfPayment;
+        }
+
         public void PreponderancePayment()
         {
             if(_luggageWeight > MaxLuggageWeight)
@@ -175,6 +182,39 @@ namespace Task_12_1.Passenger
             {
                 _sumOfPayment += (MaxCarryOnWeight - _carryOnWeight) * AdditionalPaymentPerKilo;
             }
+        }
+
+        public string ProvidePassport()
+        {
+            return $"Passport in the name of citizen {FullName}";
+        }
+
+        public Passenger()
+        {
+        }
+
+        public Passenger(Name fullName)
+        {
+            FullName = fullName;
+        }
+
+        public Passenger(string firstName, string surname)
+        {
+            _fullName.FirstName = firstName;
+            _fullName.Surname = surname;
+        }
+
+        public Passenger(Name fullName, int age)
+        {
+            FullName = fullName;
+            Age = age;
+        }
+
+        public Passenger(string firstName, string surname, int age)
+        {
+            _fullName.FirstName = firstName;
+            _fullName.Surname = surname;
+            _age = age;
         }
     }
 }
