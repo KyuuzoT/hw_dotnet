@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using Task_12_1.Passenger;
 
 namespace Task_12_1.Airport
 {
@@ -81,12 +82,36 @@ namespace Task_12_1.Airport
             return greeting;
         }
 
+        internal void PerformPassportControl(Passenger.Passenger passenger, out bool statusOk)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Please, provide a passport for the control.");
+            Thread.Sleep(1000);
+            Console.WriteLine("Control in progress, please stand by...");
+            Thread.Sleep(2000);
+            if(!passenger.HasDestination)
+            {
+                Console.WriteLine("If you're not gonna fly anywhere then why are you here?");
+            }
+            if(!passenger.HasVisa)
+            {
+                statusOk = false;
+            }
+            else
+            {
+                statusOk = true;
+            }
+
+            Console.WriteLine("Done.");
+            Console.ResetColor();
+        }
+
         public void PerformCheckIn()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Performing check-in...");
             Thread.Sleep(1000);
-            Console.WriteLine("Performed!");
+            Console.WriteLine("Performed!\n");
             Console.ResetColor();
         }
 
@@ -123,6 +148,7 @@ namespace Task_12_1.Airport
         internal void PerformSecurityCheckOfLuggage()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("We should perform a small security check for your luggage:");
             string answer;
             Console.WriteLine("\nYou should answer 'y' or 'n' to every question in this list!");
             Console.WriteLine("\t1. Do you have any guns?");
@@ -176,6 +202,7 @@ namespace Task_12_1.Airport
         internal void PerformSecurityCheckOfCarryOn()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("We should perform a security check for your carryon:");
             string answer;
             Console.WriteLine("\nYou should answer 'y' or 'n' to every question in this list!");
             Console.WriteLine("\t1. Do you have any guns?");

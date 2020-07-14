@@ -211,6 +211,7 @@ namespace Task_12_1.Passenger
 
         internal static void CheckAdditionalPayment(this Passenger passenger)
         {
+            passenger.PreponderancePayment();
             Console.ForegroundColor = ConsoleColor.Yellow;
             if (passenger.SumOfPayment.Equals(0))
             {

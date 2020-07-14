@@ -205,12 +205,12 @@ namespace Task_12_1.Passenger
         {
             if(_luggageWeight > MaxLuggageWeight)
             {
-                _sumOfPayment += (MaxLuggageWeight - _luggageWeight) * AdditionalPaymentPerKilo;
+                _sumOfPayment += (_luggageWeight - MaxLuggageWeight) * AdditionalPaymentPerKilo;
             }
 
             if(_carryOnWeight > MaxCarryOnWeight)
             {
-                _sumOfPayment += (MaxCarryOnWeight - _carryOnWeight) * AdditionalPaymentPerKilo;
+                _sumOfPayment += (_carryOnWeight - MaxCarryOnWeight) * AdditionalPaymentPerKilo;
             }
         }
 

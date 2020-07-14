@@ -6,6 +6,8 @@ namespace Task_12_1
 {
     class Program
     {
+        private static bool _statusOK;
+
         static void Main(string[] args)
         {
             var airport = Airport.Airport.GetAirportInstance();
@@ -16,29 +18,38 @@ namespace Task_12_1
             Console.WriteLine("\n\n//-----------------AT THE AIRPORT-----------------//");
             Console.WriteLine($"{airport.GetAirportTimeOfDayGreeting()}" +
                 $"{passenger.FullName}! Welcome to {airport.AirportName}");
+
+            Console.WriteLine("\nPlease, proceed to check-in.");
             if (!airport.CheckPerformedCheckIn(passenger))
             {
                 airport.PerformCheckIn();
             }
-
-            if(passenger.HasLuggage)
+            
+            if (passenger.HasLuggage)
             {
-                Console.WriteLine("We should perform a small security check for your luggage:");
+                Console.WriteLine("Please proceed to luggage control.");
                 airport.PerformSecurityCheckOfLuggage();
             }
 
-            Console.WriteLine("Please proceed to security check");
             if (passenger.HasCarryOn)
             {
-                Console.WriteLine("We should perform a security check for your carryon:");
+                Console.WriteLine("Please proceed to security check.");
                 airport.PerformSecurityCheckOfCarryOn();
             }
 
             Console.WriteLine("Please proceed to passport control");
+            airport.PerformPassportControl(passenger, out _statusOK);
+
+            if(_statusOK)
+            {
+                Console.WriteLine("WELCOME ON-BOARD!");
+            }
+            else
+            {
+                Console.WriteLine("You cannot attend this flight. Have a nice day.");
+            }
 
             Console.ReadKey();
         }
-
-        
     }
 }
