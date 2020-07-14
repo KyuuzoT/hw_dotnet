@@ -10,6 +10,7 @@ namespace Task_12_2
         private int _duration;
         private string _author;
         private DateTime _releaseDate;
+        private Genres _genre;
 
         public string Name
         {
@@ -61,6 +62,15 @@ namespace Task_12_2
             }
         }
 
+        public Genres Genre
+        {
+            get => _genre;
+            set
+            {
+                _genre = value;
+            }
+        }
+
         public Song()
         {
 
@@ -96,7 +106,7 @@ namespace Task_12_2
         public object GetSongData(Song song)
         {
             string title = $"{song.Author} - {song.Name}";
-            return new { title, song.Duration, song.ReleaseDate.Year };
+            return new { title, song.Duration, song.ReleaseDate.Year, song.Genre};
         }
 
         public void SetSongData(string songName, string songAuthor, DateTime releaseDate, int duration)
@@ -105,6 +115,20 @@ namespace Task_12_2
             _author = songAuthor;
             _releaseDate = releaseDate;
             _duration = duration;
+        }
+
+        public void SetSongData(string songName, string songAuthor, DateTime releaseDate, int duration, Genres songGenre)
+        {
+            _name = songName;
+            _author = songAuthor;
+            _releaseDate = releaseDate;
+            _duration = duration;
+            _genre = songGenre;
+        }
+
+        public override string ToString()
+        {
+            return $"Our song:\n{_author} - {_name}\nDuration: {_duration}\nRelease Date: {_releaseDate.ToString("dd-MM-yyyy")}\nGenre: {_genre}";
         }
     }
 }
