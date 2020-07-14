@@ -11,8 +11,9 @@ namespace Task_12_1
             var airport = Airport.Airport.GetAirportInstance();
             airport.AirportName = "Ben Gurion, TLV";
 
-            var passenger = CreatePassenger();
-
+            var passenger = new Passenger.Passenger();
+            passenger = passenger.CreatePassenger();
+            Console.WriteLine("\n\n//-----------------AT THE AIRPORT-----------------//");
             Console.WriteLine($"{airport.GetAirportTimeOfDayGreeting()}" +
                 $"{passenger.FullName}! Welcome to {airport.AirportName}");
             if (!airport.CheckPerformedCheckIn(passenger))
@@ -20,49 +21,24 @@ namespace Task_12_1
                 airport.PerformCheckIn();
             }
 
+            if(passenger.HasLuggage)
+            {
+                Console.WriteLine("We should perform a small security check for your luggage:");
+                airport.PerformSecurityCheckOfLuggage();
+            }
+
+            Console.WriteLine("Please proceed to security check");
+            if (passenger.HasCarryOn)
+            {
+                Console.WriteLine("We should perform a security check for your carryon:");
+                airport.PerformSecurityCheckOfCarryOn();
+            }
+
+            Console.WriteLine("Please proceed to passport control");
 
             Console.ReadKey();
         }
 
-        private static Passenger.Passenger CreatePassenger()
-        {
-            var pass = new Passenger.Passenger();
-            Console.WriteLine("Input information about yourself:");
-            pass.IntroduceYourself();
-            pass.SetAge();
-            pass.CheckInPerformed();
-            Console.WriteLine("Are you flying with luggage?");
-            pass.LuggagePresenceCheck();
-            if (pass.HasLuggage)
-            {
-               pass.LuggageWeight = InputWeight(pass, "luggage");
-            }
-
-            Console.WriteLine("Are you flying with carry-on?");
-            pass.CarryOnPresenceCheck();
-            if (pass.HasCarryOn)
-            {
-                pass.CarryOnWeight = InputWeight(pass, "carryon");
-            }
-
-            pass.CheckAdditionalPayment();
-
-            return pass;
-        }
-
-        private static int InputWeight(Passenger.Passenger pass, string name)
-        {
-            Console.WriteLine($"Input weight of your {name}:");
-            int weight;
-            while (!int.TryParse(Console.ReadLine(), out weight))
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Invalid input, try again!");
-                Console.ResetColor();
-                Console.WriteLine($"Input weight of your {name}:");
-            }
-
-            return weight;
-        }
+        
     }
 }

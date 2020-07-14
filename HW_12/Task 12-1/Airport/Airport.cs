@@ -118,5 +118,155 @@ namespace Task_12_1.Airport
                 return true;
             }
         }
+
+
+        internal void PerformSecurityCheckOfLuggage()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            string answer;
+            Console.WriteLine("\nYou should answer 'y' or 'n' to every question in this list!");
+            Console.WriteLine("\t1. Do you have any guns?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t2. Do you have any explosives?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t3. Do you have any domestic or industrial gases?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t4. Do you have any flammable liquids?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t5. Do you have any flammable matters?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t6. Do you have any poisonous matters?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t7. Do you have any toxic matters?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t8. Do you have any caustic substances?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);            
+        }
+
+        internal void PerformSecurityCheckOfCarryOn()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            string answer;
+            Console.WriteLine("\nYou should answer 'y' or 'n' to every question in this list!");
+            Console.WriteLine("\t1. Do you have any guns?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t2. Do you have any explosives?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t3. Do you have any domestic or industrial gases?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t4. Do you have any flammable liquids?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t5. Do you have any flammable matters?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t6. Do you have any poisonous matters?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t7. Do you have any toxic matters?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t8. Do you have any caustic substances?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t9. Do you have any knives, axes, other steel arms?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t10. Do you have any caustic mercury thermometers?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\t11. Do you have any small vehicles e.g. monowheel, gyroscuter etc.?");
+            Console.ResetColor();
+            answer = Console.ReadLine();
+            CheckAnswer(answer);
+        }
+
+        private void CheckAnswer(string answer)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            if (answer.ToLower().Equals("y"))
+            {
+                Console.WriteLine("You should throw this away 'cause you can not fly with it.");
+                ThrowingAwayForbiddenSubstance();
+                Console.WriteLine("Ok, next question:");
+            }
+            else
+            {
+                Console.WriteLine("Ok, next question:");
+            }
+            Console.ResetColor();
+        }
+
+        private void ThrowingAwayForbiddenSubstance()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Throwing it away...");
+            Thread.Sleep(2000);
+            Console.WriteLine("Done.");
+            Console.ResetColor();
+        }
     }
 }

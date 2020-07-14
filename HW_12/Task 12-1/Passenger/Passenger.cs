@@ -27,6 +27,9 @@ namespace Task_12_1.Passenger
         private int _luggageWeight;
         private bool _hasCarryOn;
         private int _carryOnWeight;
+        private string _destination;
+        private bool _hasDestination;
+        private bool _hasVisa;
         
         private int _sumOfPayment;
 
@@ -164,6 +167,33 @@ namespace Task_12_1.Passenger
                     _carryOnWeight = value;
                 }
             }
+        }
+
+        public string Destination
+        {
+            get => _destination;
+            set
+            {
+                if(string.IsNullOrEmpty(value))
+                {
+                    _hasDestination = false;
+                }
+                else
+                {
+                    _destination = value;
+                    _hasDestination = true;
+                }
+            }
+        }
+
+        public bool HasDestination
+        {
+            get => _hasDestination;
+        }
+
+        public bool HasVisa
+        {
+            get; set;
         }
 
         public int SumOfPayment
